@@ -18,30 +18,43 @@ public class Main {
         System.out.println("Podaj kod pin");
         int pin=sc.nextInt();
         if (pin == account1.getPin());
-        System.out.println("MENU - Wybierz opcje.");
-        System.out.println("\n 1 - Wpłata \n 2 - Wypłata \n 3 - Sprawdzenie salda konta \n 4 - Kredyt \n 5 - Wyloguj ");
-        System.out.println(" Twój wybór");
-        int wybor = sc.nextInt();
-        switch (wybor){
-            case 1:
-                System.out.println("Wpłata gotówki");
-                break;
-            case 2:
-                System.out.println("Wypłata gotówki");
-                double wyplata = sc.nextDouble();
-                account1.withdraw(wyplata);
-                break;
-            case 3:
-                System.out.println("Saldo");
-                account1.getBalance();
-                System.out.println(account1.getBalance());
-                break;
-            case 4:
-                System.out.println("Kredyt");
-                break;
-            case 5:
-                System.out.println("Do widzenia");
 
-        }
+
+        int wybor;
+        do {
+            System.out.println("MENU - Wybierz opcje.");
+            System.out.println("\n 1 - Wpłata \n 2 - Wypłata \n 3 - Sprawdzenie salda konta \n 4 - Kredyt \n 5 - Wyloguj ");
+            System.out.println(" Twój wybór");
+            wybor = sc.nextInt();
+
+            switch (wybor) {
+                case 1:
+                    System.out.println("Wpłata gotówki");
+                    double wplata = sc.nextDouble();
+                    account1.deposit(wplata);
+                    System.out.println("Aktualny stan konta to :" + account1.getBalance());
+                    break;
+                case 2:
+                    System.out.println("Wypłata gotówki");
+                    double wyplata = sc.nextDouble();
+                    account1.withdraw(wyplata);
+                    System.out.println("Aktualny stan konta to :" + account1.getBalance());
+                    break;
+                case 3:
+                    System.out.println("Saldo");
+                    account1.getBalance();
+                    System.out.println(account1.getBalance());
+                    break;
+                case 4:
+                    System.out.println("Kredyt");
+                    double kredyt = sc.nextDouble();
+                    account1.credit(kredyt);
+                    System.out.println("Aktualny stan konta " + account1.getBalance());
+                    break;
+                case 5:
+                    System.out.println("Do widzenia");
+
+            }
+        } while (wybor != 5);
     }
 }

@@ -47,8 +47,21 @@ public class Account {
         return pin;
     }
 
-    public double withdraw(double cashToGet) {
-        return balance = balance - cashToGet;
+    public double withdraw(double moneyToWithdraw) {
+        return balance = balance - moneyToWithdraw;
+    }
+    public double deposit(double moneyToDeposit){
+        return balance = balance + moneyToDeposit;
+    }
+    public double credit(double moneyToBorrow){
+        double check = balance * 0.1;
+        if (check > moneyToBorrow){
+            return balance += moneyToBorrow;
+        } else {
+            System.out.println("Kredyt nie dostepny");
+            return balance;
+        }
+
     }
 
 }
