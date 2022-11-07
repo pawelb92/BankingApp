@@ -9,7 +9,7 @@ public class Account {
     private double balance;
     private int pin;
 
-    Account(String name,String lastName,String pesel,String login,String accountNumber, double balance,int pin){
+    Account(String name, String lastName, String pesel, String login, String accountNumber, double balance, int pin) {
         this.name = name;
         this.lastName = lastName;
         this.pesel = pesel;
@@ -18,27 +18,37 @@ public class Account {
         this.balance = balance;
         this.pin = pin;
     }
-    public String getName(){
+
+    public String getName() {
         return name;
     }
-    public String getLastName(){
+
+    public String getLastName() {
         return lastName;
     }
-    public String getPesel(){
+
+    public String getPesel() {
         return pesel;
     }
-    public String getLogin(){
+
+    public String getLogin() {
         return login;
     }
-    public String getAccountNumber(){
+
+    public String getAccountNumber() {
         return accountNumber;
     }
-    public double getBalance(){
+
+    public double getBalance() {
         return balance;
     }
-    public int getPin(){
+
+    public int getPin() {
         return pin;
     }
 
+    public double withdraw(double cashToGet) {
+        return balance = balance - cashToGet;
+    }
 
 }

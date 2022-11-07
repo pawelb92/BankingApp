@@ -28,9 +28,13 @@ public class Main {
                 break;
             case 2:
                 System.out.println("Wypłata gotówki");
+                double wyplata = sc.nextDouble();
+                account1.withdraw(wyplata);
                 break;
             case 3:
                 System.out.println("Saldo");
+                account1.getBalance();
+                System.out.println(account1.getBalance());
                 break;
             case 4:
                 System.out.println("Kredyt");
