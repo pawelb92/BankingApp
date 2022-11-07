@@ -18,8 +18,26 @@ public class Account {
         this.balance = balance;
         this.pin = pin;
     }
+    public String getName(){
+        return name;
+    }
+    public String getLastName(){
+        return lastName;
+    }
+    public String getPesel(){
+        return pesel;
+    }
     public String getLogin(){
         return login;
+    }
+    public String getAccountNumber(){
+        return accountNumber;
+    }
+    public double getBalance(){
+        return balance;
+    }
+    public int getPin(){
+        return pin;
     }
 
 
